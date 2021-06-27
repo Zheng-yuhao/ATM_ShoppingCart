@@ -15,11 +15,11 @@ def shopping_interface(login_user, shop_car):
         login_user, cost
     )
     if flag:
-        msg = f'用户:[{login_user}]支付成功,扣款{cost}$,准备发货...'
+        msg = f'Account:[{login_user}] purchasing successfully,deduction:{cost}$'
         shop_logger.info(msg)
         return True, msg
 
-    return False, '支付失败,金额不足或其他原因,请检查.'
+    return False, 'Error, check your account balance or contact to our operator!'
 
 
 def add_shopcar_interface(login_user, shopping_car):
@@ -36,7 +36,7 @@ def add_shopcar_interface(login_user, shopping_car):
             )
 
         db_handler.save(login_user, user_dict)
-    return True, '添加购物车成功'
+    return True, 'Add to cart successfully!'
 
 
 def check_shop_car_interface(login_user):

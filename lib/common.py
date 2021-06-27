@@ -1,10 +1,10 @@
 '''
-公用方法
+Common functions
 '''
 import logging.config
 from conf import settings
 
-# 装饰器构成
+# decorator
 def outer(func):
     from core import src
     def inner(*args, **kwargs):
@@ -17,7 +17,7 @@ def outer(func):
 
     return inner
 
-# 添加日志功能
+# log
 def get_logger(log_type):
     logging.config.dictConfig(
         settings.LOGGING_DIC
